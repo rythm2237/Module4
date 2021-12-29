@@ -1,9 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-	<title>Hello Coursera!</title>
-</head>
-<body>
 
+<head> 
+<style>
+#slider{
+	position:relative;
+	border:1px solid #ccc;
+	width:600px;
+	height:250px;
+	margin:100px auto;
+	overflow: hidden;
+	
+}
+
+#gal{
+	border:1px solid red;
+	width:500%;
+	height:100%;
+	position: relative;
+	left: 0px;
+}
+
+#right{
+	cursor:pointer;
+	background:url("img/slider/right.png") red no-repeat 50% 50%;
+	background-size:70%;
+	border:1px solid red;
+	width:50px;
+	height:70px;
+	
+	position:absolute;
+	top:80px;
+	right:0px;
+	
+}
+#left{
+	cursor:pointer;
+	background:url("img/slider/left.png") red no-repeat 50% 50%;
+	background-size:70%;	
+	
+	border:1px solid blue;
+	width:50px;
+	height:70px;
+	position:absolute;
+	top:80px;
+	left:0;
+}
+
+#slider > #gal > .items{
+	width:20%;
+	height:100%;
+	
+	float:left;
+}
+
+#slider > #gal > .items > img{
+	width:100%;
+	height:100%;
+}
+
+#slider > #gal > .items:hover>p{
+	top:-45px;
+}
+
+#slider > #gal > .items > p{
+	transition:1.5s;
+	position:relative;
+	top:0;
+	
+	background:rgba(0,0,0,0.6);
+	margin:0;
+	padding:10px;
+	color:#fff;
+	text-align:center;
+	font-size:16;
+	font-family:tahoma;
+}
+
+</style>
+</head>
+
+<body>
+	<div id="slider">
+		<div id="gal">
+			<div class="items">
+				<img src="img/slider/1.jpg">
+				<p>details</p>
+			</div>
+			
+			<div class="items">
+				<img src="img/slider/2.jpg">
+				<p>details</p>
+			</div>
+			
+			<div class="items">
+				<img src="img/slider/3.jpg">
+				<p>details</p>
+			</div>
+			
+			<div class="items">
+				<img src="img/slider/4.jpg">
+				<p>details</p>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		<div id="right">  </div>
+		<div id="left">   </div>
+		
+	</div> 
+	<script>
+		pos=0;
+		right.onclick=function () {
+			if (pos > -400){
+				pos = pos - 100;
+				gal.style.left= pos + "%";
+			}
+			else if(pos == -400){
+				pos = 0;
+				gal.style.left= pos + "%";
+			}
+		}
+
+		left.onclick=function () {
+			if (pos < 0){
+				pos = pos + 100;
+				gal.style.left= pos + "%";
+			}
+
+		}
+		
+
+
+	</script>
+	
 </body>
 </html>
